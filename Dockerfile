@@ -17,3 +17,5 @@ RUN apk add --no-cache bash
 RUN sed "s/\/ash/\/bash/" -i /etc/passwd
 
 RUN apk add --no-cache bash-completion docker-bash-completion
+
+CMD [ "/bin/bash" ]
