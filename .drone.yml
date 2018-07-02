@@ -1,0 +1,27 @@
+xcache: &cache
+  image: drillster/drone-volume-cache
+  mount: [ '/drone/docker' ]
+  volumes: [ '/tmp/cache:/cache' ]
+
+pipeline:
+
+  restore-cache:
+    <<: *cache
+    restore: true
+    
+  publish:
+    image: plugins/docker
+    repo: shynome/docker-cli
+    secrets: [ docker_username, docker_password ]
+    tags: [ "${DRONE_COMMIT_SHA}", latest ]
+    storage_path: /drone/docker
+
+  rebuild-cache:
+    <<: *cache
+    rebuild: true
+
+  report:
+    image: shynome/alpine-drone-ci
+    when: { status: [ success, failure ] }
+    secrets: [ report_hook ]
+    deploy: report -a
