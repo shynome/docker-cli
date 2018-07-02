@@ -1,5 +1,5 @@
 {
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
     "postversion": "git push --follow-tags",
     "set_tags": "echo \"$(node -pe \"process.env.npm_package_version.split('.').map((v,i,a)=>a.slice(0,i+1).join('.')).join(',')\"),latest\">.tags"
