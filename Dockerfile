@@ -1,3 +1,2 @@
-FROM alpine
-COPY repositories /etc/apk/
+FROM alpine:edge
 RUN apk add --no-cache nodejs docker openssh git curl
