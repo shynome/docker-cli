@@ -11,7 +11,7 @@ pipeline:
     
   set_tags:
     image: node:carbon-alpine
-    commads:
+    commands:
     - npm run set_tags
     
   publish:
