@@ -4,7 +4,7 @@ FROM alpine:edge
 WORKDIR /work
 
 # 必须的运行环境
-RUN apk add --no-cache nodejs openssh git curl
+RUN apk add --no-cache nodejs npm openssh git curl
 
 # 添加 docker 用以管理容器服务
 RUN apk add --no-cache docker
