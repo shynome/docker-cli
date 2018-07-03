@@ -18,3 +18,5 @@ RUN sed "s/\/ash/\/bash/" -i /etc/passwd
 RUN apk add --no-cache docker docker-bash-completion
 
 CMD [ "/bin/bash" ]
+
+COPY rootfs /
