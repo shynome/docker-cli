@@ -16,6 +16,6 @@ RUN apk add --no-cache vim && echo 'alias vi=vim'>>/etc/profile
 RUN apk add --no-cache bash
 RUN sed "s/\/ash/\/bash/" -i /etc/passwd
 
-RUN apk add --no-cache bash-completion docker-bash-completion
+RUN apk add --no-cache bash-doc bash-completion docker-bash-completion
 
 CMD [ "/bin/bash" ]
