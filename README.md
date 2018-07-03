@@ -18,6 +18,7 @@ dcli () {
 
   local common="
     docker run --rm -ti \
+      --net host \
       -v $HOME:/root \
       -v $work_dir:/work \
       -v $docker_sock:$docker_sock
